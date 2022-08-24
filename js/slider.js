@@ -15,7 +15,18 @@ const app = new Vue ({
 		currentIndex: 0,
 	},
 	methods: {
-		
+		goNext(){
+			this.currentIndex++
+			if (this.currentIndex > this.slides.length - 1) {
+				this.currentIndex = 0;
+			}
+		},
+		goPrev(){
+			this.currentIndex--
+			if (this.currentIndex < 0) {
+				this.currentIndex = slides.length -1
+			}
+		},
 	},
 		
 })
