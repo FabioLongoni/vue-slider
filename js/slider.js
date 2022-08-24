@@ -11,7 +11,11 @@ const slides = [
 const app = new Vue ({
 	el: '#root',
 	data: {
-		slides: slides,
+		slides,
+		currentIndex: 0,
+	},
+	methods: {
+		
 	},
 		
 })

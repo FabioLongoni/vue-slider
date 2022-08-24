@@ -15,30 +15,18 @@
     <div id="root" class="container">
 
       <div class="slider">
-
+        
         <ul class="slides-wrapper">
-          <li class="slide active">
-            <img :src="slides[0]" alt="">
-          </li>
-          <li class="slide">
-            <img src="./img/02.jpg" alt="">
-          </li>
-          <li class="slide">
-            <img src="./img/03.jpg" alt="">
-          </li>
-          <li class="slide">
-            <img src="./img/04.jpg" alt="">
-          </li>
-          <li class="slide">
-            <img src="./img/05.jpg" alt="">
+          <li :class="index === currentIndex ? 'active' : ''" class="slide" v-for="(slide,index) in slides">
+            <img :src="slide" alt="">
           </li>
         </ul>
 
         <div class="arrows">
-          <p class="arrow-prev">
+          <p class="arrow-prev" @click="currentIndex--">
             <i class="fa-solid fa-chevron-left"></i>
           </p>
-          <p class="arrow-next">
+          <p class="arrow-next" @click="currentIndex++">
             <i class="fa-solid fa-chevron-right"></i>
           </p>
         </div>
